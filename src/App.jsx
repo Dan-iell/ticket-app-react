@@ -16,7 +16,6 @@ function App() {
     !!localStorage.getItem("ticketapp_session")
   );
 
-  // Automatically update auth state if user logs in/out
   useEffect(() => {
     const handleStorageChange = () => {
       setIsAuthenticated(!!localStorage.getItem("ticketapp_session"));
@@ -29,12 +28,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Public Routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/auth/login" element={<LoginPage />} />
         <Route path="/auth/signup" element={<SignupPage />} />
 
-        {/* Protected Routes */}
         <Route
           path="/dashboard"
           element={
@@ -56,7 +53,6 @@ function App() {
           }
         />
 
-        {/* Fallback Route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

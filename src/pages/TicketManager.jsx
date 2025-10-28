@@ -49,14 +49,12 @@ export default function TicketManager() {
     }
 
     if (formData.id) {
-      // Update
       const updated = tickets.map((t) =>
         t.id === formData.id ? { ...formData } : t
       );
       saveTickets(updated);
       toast.success("Ticket updated successfully!");
     } else {
-      // Create
       const newTicket = {
         ...formData,
         id: Date.now(),
@@ -107,7 +105,6 @@ export default function TicketManager() {
       </header>
 
       <main className="max-w-[1440px] mx-auto grid md:grid-cols-2 gap-8">
-        {/* Form */}
         <form
           onSubmit={handleSubmit}
           className="bg-white shadow-md rounded-xl p-6 space-y-4"
@@ -164,7 +161,6 @@ export default function TicketManager() {
           </div>
         </form>
 
-        {/* Ticket List */}
         <div className="bg-white shadow-md rounded-xl p-6">
           <h2 className="text-xl font-semibold mb-4">Tickets</h2>
           {tickets.length === 0 ? (
@@ -210,7 +206,6 @@ export default function TicketManager() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-blue-600 text-white text-center py-4 mt-12">
         <p>© {new Date().getFullYear()} TicketApp. All rights reserved.</p>
       </footer>

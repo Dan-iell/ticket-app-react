@@ -34,7 +34,6 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
       <Toaster />
-      {/* Header */}
       <header className="bg-white shadow-md">
         <div className="max-w-[1440px] mx-auto flex justify-between items-center p-6">
           <h1 className="text-2xl font-bold text-blue-700">
@@ -57,14 +56,12 @@ export default function Dashboard() {
         </div>
       </header>
 
-      {/* Dashboard Content */}
       <main className="flex-1 flex flex-col items-center justify-start py-12 px-6">
         <div className="max-w-[1440px] w-full">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">
             Welcome, {user?.name || "User"} 👋
           </h2>
 
-          {/* Stats Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white shadow-md rounded-xl p-6 border-t-4 border-blue-600 text-center">
               <h3 className="text-xl font-semibold text-gray-700">
@@ -94,7 +91,6 @@ export default function Dashboard() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-blue-600 text-white text-center py-4 mt-12">
         <p>© {new Date().getFullYear()} TicketApp. All rights reserved.</p>
       </footer>
